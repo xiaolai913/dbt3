@@ -124,7 +124,7 @@ echo "done."
 #$DBSCRIPTDIR/dbt3-mysql-start-db -p "${PARAMETERS}" || exit 1
 # Start collecting system statistics.
 echo -n "Starting sysstats..."
-$SRCDIR/scripts/dbt3-sysstats --outdir $OUTPUT_DIR --iter 1440 --sample 60 || exit 1
+$SRCDIR/scripts/dbt3-sysstats --outdir $OUTPUT_DIR --iter $STAT_ITER --sample $STAT_SAMPLE || exit 1
 echo "done."
 
 # Collect database statistics

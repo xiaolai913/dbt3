@@ -127,7 +127,7 @@ if [ $USE_OPROFILE -eq 1 ]; then
 fi
 
 # Start collecting system statistics.
-$SRCDIR/scripts/dbt3-sysstats --outdir $OUTPUT_DIR --iter 1440 --sample 60 || exit 1
+$SRCDIR/scripts/dbt3-sysstats --outdir $OUTPUT_DIR --iter $STAT_ITER --sample $STAT_SAMPLE || exit 1
 
 $DBSCRIPTDIR/dbt3-pgsql-create-db -o ${OUTPUT_DIR} -l ${DBPORT} -p "${PARAMETERS}"
 	

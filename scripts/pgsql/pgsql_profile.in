@@ -8,6 +8,8 @@
 #
 
 export DBT3_DIR=${HOME}/local/dbt3
+export STAT_ITER=1440
+export STAT_SAMPLE=60
 export PGHOME=@PGSQL_PATH@
 
 export SID=dbt3

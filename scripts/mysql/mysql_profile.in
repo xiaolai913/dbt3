@@ -16,6 +16,8 @@ if [ "$id" = "0" ]; then
 fi
 
 export DBT3_DIR=/tmp/dbt3
+export STAT_ITER=1440
+export STAT_SAMPLE=60
 
 export SID=dbt3
 export DBNAME=$SID

@@ -25,7 +25,7 @@ int get_statement(FILE *query_input)
 	comment_index=0;
 	statement_index=0;
 
-	while (fgets(line, 127, query_input) != NULL)
+	while (fgets(line, MAX_LINE_WIDTH, query_input) != NULL)
 	{
 		/* skip the blank lines */
 		if (line[0] == '\n')
@@ -99,9 +99,11 @@ int get_statement(FILE *query_input)
 
 void ltrim(char *str)
 {
+	char tmp_str[MAX_LINE_WIDTH];
 	char *start_pos;
 
-	start_pos=str;
+	strncpy(tmp_str, str, MAX_LINE_WIDTH);
+	start_pos=tmp_str;
 	while (*start_pos == ' ' || *start_pos == '\t') start_pos++;
-	strcpy(str, start_pos);
+	strncpy(str, start_pos, MAX_LINE_WIDTH);
 }

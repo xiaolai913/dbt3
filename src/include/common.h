@@ -14,6 +14,8 @@
 #define SINGLE 7
 #define EXPLAIN 8
 
+#define MAX_LINE_WIDTH 127
+
 struct sql_statement_t
 {
 	int rowcount;
